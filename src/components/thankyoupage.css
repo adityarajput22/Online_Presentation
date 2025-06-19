@@ -1,0 +1,155 @@
+/* Main Layout */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #d6d6d6d7;
+  color: rgb(140, 64, 64);
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.thankyou-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Image Styling */
+.images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images img {
+  width: 100%;
+  max-width: 600px;
+  height: 70vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* Text Section */
+.text-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideInRight 1s ease forwards;
+}
+
+/* Headings */
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  align-items: baseline;
+}
+.heading h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+#hka1 {
+  font-weight: 900;
+}
+
+/* Subheading */
+.sub-heading h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Social Icons */
+.team-socials {
+  display: flex;
+  justify-content: flex-center;
+  gap: 4em;
+  margin: 1rem 0;
+}
+.team-socials a {
+  color: rgb(140, 64, 64);
+  font-size: 2em;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.team-socials a:hover {
+  transform: scale(1.2);
+  color: #ff5252;
+}
+
+/* Paragraph */
+.paragraph p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 500px;
+}
+.paragraph h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .thankyou-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .images img {
+    max-width: 300px;
+    height: auto;
+  }
+
+  .heading {
+    justify-content: center;
+  }
+
+  .heading h1 {
+    font-size: 2.5rem;
+  }
+
+  .sub-heading h2 {
+    font-size: 1.2rem;
+  }
+
+  .paragraph p,
+  .paragraph h3 {
+    text-align: center;
+  }
+
+  .team-socials {
+    justify-content: center;
+  }
+}

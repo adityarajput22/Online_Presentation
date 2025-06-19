@@ -1,0 +1,173 @@
+.timeline-container {
+  padding: 40px 20px;
+  /* background-color: #f0f4f8; */
+   background: #d6d6d6d7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: auto;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 80px;
+  padding: 60px 40px;
+  position: relative;
+  min-width: 1000px;
+}
+
+/* Horizontal center line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #3498db;
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 220px;
+  background: #544545;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0;
+  animation: slideInUp 0.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-item.top {
+  margin-bottom: 100px;
+  transform: translateY(-100%);
+}
+
+.timeline-item.bottom {
+  margin-top: 100px;
+  transform: translateY(100%);
+}
+
+/* Hover lift */
+.timeline-item.top:hover {
+  transform: translateY(calc(-100% - 8px)) scale(1.05);
+}
+.timeline-item.bottom:hover {
+  transform: translateY(calc(100% + 8px)) scale(1.05);
+}
+
+/* Bookmark icon */
+.bookmark-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 36px;
+  z-index: 20;
+  transition: fill 0.3s ease;
+}
+
+.timeline-item.top .bookmark-icon {
+  bottom: -20px;
+}
+
+.timeline-item.bottom .bookmark-icon {
+  top: -20px;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* Hover effect on bookmark */
+.timeline-item:hover .bookmark-icon svg path {
+  fill: #2980b9;
+}
+
+/* Content */
+.timeline-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.timeline-content p {
+  transition: opacity 0.3s ease;
+}
+
+.extra-hover-text {
+  opacity: 0;
+  font-weight: 600;
+  color: #3498db;
+  font-size: 1rem;
+  margin-top: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.timeline-item:hover .extra-hover-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive fallback for small screens */
+@media screen and (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: auto;
+  }
+
+  .timeline::before {
+    left: 40px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 90%;
+    margin: 40px 0;
+    transform: none !important;
+    padding-left: 60px;
+  }
+
+  .timeline-item.top,
+  .timeline-item.bottom {
+    margin: 40px 0;
+  }
+
+  .bookmark-icon {
+    left: 20px !important;
+    top: 20px !important;
+    transform: none !important;
+  }
+}

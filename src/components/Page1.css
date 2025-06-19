@@ -1,0 +1,108 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#head {
+  font-size: 15vh;
+  font-weight: 500;
+  margin: 0;
+}
+
+#head2 {
+  font-size: 9vh;
+  font-weight: 200;
+  margin: 0;
+}
+
+
+img {
+  width: 35vw;          
+  height: auto;         
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;      
+}
+
+
+.buttons {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.buttons button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  img {
+    width: 80vw;
+  }
+}
+
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+  #head {
+    font-size: 8vh;
+  }
+
+  #head2 {
+    font-size: 5vh;
+  }
+
+  img {
+    width: 60vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #head {
+    font-size: 6vh;
+  }
+
+  #head2 {
+    font-size: 3.5vh;
+  }
+
+  img {
+    width: 85vw;
+  }
+
+  .buttons {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .buttons button {
+    font-size: 1.2rem;
+  }
+}

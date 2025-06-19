@@ -1,0 +1,133 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.app-header h1 {
+  font-size: 3.5rem; /* Bigger heading */
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.highlight {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Two columns layout */
+.section-columns {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Buttons */
+.button-column button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px; /* Larger font */
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.2s;
+  padding: 20px 30px; /* More padding for bigger buttons */
+  min-width: 280px; /* Ensure buttons have a good width */
+}
+
+.button-column button:hover {
+  transform: translateX(8px);
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Number styling */
+.starting {
+  margin: 0;
+  color: #ff5733;
+  font-size: 3rem; /* Bigger number */
+  min-width: 40px; /* Keep consistent width */
+  text-align: center;
+}
+
+/* Text styling */
+.welcome-text {
+  color: #0077cc;
+  font-weight: 700;
+  font-size: 1.8rem; /* Larger text */
+}
+
+/* Default content display */
+.content {
+  margin-top: 60px;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.fade-in.delay {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .section-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .button-column {
+    width: 100%;
+    align-items: center;
+  }
+
+  .button-column button {
+    min-width: 90%;
+    font-size: 20px;
+    padding: 18px 25px;
+  }
+
+  .starting {
+    font-size: 2.2rem;
+    min-width: 35px;
+  }
+
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .content {
+    font-size: 1.1rem;
+  }
+}

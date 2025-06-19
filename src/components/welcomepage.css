@@ -1,0 +1,169 @@
+:root {
+  --genially-tertiary: #a1a7ff;
+  --pinkish-purple: #8e3cbb;
+  --dark-purple: #cbc7d1;
+  --white: #ffffff;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark-purple);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+.welcome-page {
+  position: relative;
+  height: 100vh;
+  padding: 40px 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.blob-background {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle at center, var(--pinkish-purple), transparent 70%);
+  filter: blur(130px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+/* Wrap images and text side by side */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Image container with portraits */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Portrait styling */
+.portrait {
+  width: 220px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow:
+    0 15px 25px rgba(186, 50, 50, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.portrait:hover {
+  transform: scale(1.05);
+}
+
+/* Text content styling */
+.text-content {
+  flex: 1; /* take remaining space */
+}
+
+.welcome-title {
+  font-size: 5.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.welcome-subtitle {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin: 10px 0 0 0;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+.welcome-mintitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 5px;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .welcome-title {
+    font-size: 4rem;
+  }
+  .welcome-subtitle {
+    font-size: 2.2rem;
+  }
+  .welcome-mintitle {
+    font-size: 1.8rem;
+  }
+  .portrait {
+    width: 180px;
+    height: 260px;
+  }
+  .content-wrapper {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-page {
+    padding: 20px 10px;
+  }
+  /* Stack vertically on smaller screens */
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .image-container {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .portrait {
+    width: 150px;
+    height: 220px;
+  }
+  .welcome-title {
+    font-size: 3.5rem;
+  }
+  .welcome-subtitle {
+    font-size: 1.8rem;
+  }
+  .welcome-mintitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait {
+    width: 120px;
+    height: 180px;
+  }
+  .welcome-title {
+    font-size: 2.5rem;
+  }
+  .welcome-subtitle {
+    font-size: 1.3rem;
+  }
+  .welcome-mintitle {
+    font-size: 1.2rem;
+  }
+}
