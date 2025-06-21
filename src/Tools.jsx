@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Tools.css";
+import "./tools.css";
 
 const ToolsSection = () => {
   const [activeCard, setActiveCard] = useState(null);
